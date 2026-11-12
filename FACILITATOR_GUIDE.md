@@ -76,3 +76,7 @@ Routes to Labour Justice uses the shared board inside Manage room. Set up 2–8 
 Delete room permanently removes its submissions and scores; export first. Confirmation is required. Icebreaker room deletion is next to the Existing room selector. It deletes all participants and cards for that room only.
 
 Icebreaker participants can choose Exit session & return home, or Restart my icebreaker. Both remove their current member record, shared/private card and local identity; restart opens a fresh join form for the same room. Other participants and notebook accounts are unaffected. No action is taken on real rooms during deployment.
+
+
+### Reset daily allocations
+Under Keep both tracks balanced, expand Reset allocation / start again. Reset the selected day or all three days. By default, confirmed participant lists are kept; untick the checkbox to clear attendance too. Reset clears preferences, proposals and published assignments, reopens preference collection, and retains a reset entry in allocation history. Accounts, passwords, notebooks, icebreaker rooms and games are unaffected. Export each day before resetting if you need a copy. Reopen preferences is the lighter option: it preserves saved preferences and attendance but withdraws assignments so you can make another proposal.

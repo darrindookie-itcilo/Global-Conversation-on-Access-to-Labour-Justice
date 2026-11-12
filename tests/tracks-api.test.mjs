@@ -15,3 +15,17 @@ await post({op:'proposal',day:1,volunteers:true,version:d.version},host);d=await
 await post({op:'confirm',day:1,version:d.version},host);assert(['A','B'].includes((await get('lj_notebook=track-a-session')).days[1].assignment));assert.equal((await get('lj_notebook=track-a-session')).days[2].assignment,'');
 const cross=await POST(new Request('https://test.local/api/tracks',{method:'POST',headers:{Cookie:host,Origin:'https://other.local'},body:JSON.stringify({op:'reopen',day:1})}));assert.equal(cross.status,403);
 console.log('PASS: track endpoint authentication, participant privacy, server-derived identity, simultaneous preferences, stale-host conflict rejection, confirmed cross-device state and origin protection.');
+
+// Reset is facilitator-only, version-guarded, and explicit about its scope.
+d=await get(host,true);const beforeReset=structuredClone(d.state.days[2]);
+await post({op:'reset',day:1,scope:'day',keepRoster:true,confirmReset:true,version:d.version},'lj_notebook=track-a-session',401);
+await post({op:'reset',day:1,scope:'day',keepRoster:true,version:d.version},host,400);
+await post({op:'reset',day:1,scope:'day',keepRoster:true,confirmReset:true,version:d.version-1},host,409);
+await post({op:'reset',day:1,scope:'day',keepRoster:true,confirmReset:true,version:d.version},host);
+d=await get(host,true);assert.equal(d.state.days[1].phase,'collecting');assert.equal(d.state.days[1].roster.length,3);assert.deepEqual(d.state.days[1].preferences,{});assert.deepEqual(d.state.days[1].published,{});assert.deepEqual(d.state.days[1].draft,{});assert.equal(d.state.days[1].seed,'');assert.deepEqual(d.state.days[2],beforeReset);assert(d.state.days[1].audit.at(-1).message.includes('Reset'));
+let after=await get('lj_notebook=track-a-session');assert.equal(after.days[1].assignment,'');assert.equal(after.days[1].preference,'');assert.equal(after.days[1].enrolled,true);
+await post({op:'roster',day:2,id:'track-b',include:true,version:d.version},host);d=await get(host,true);
+await post({op:'reset',day:1,scope:'all',keepRoster:false,confirmReset:true,version:d.version},host);
+d=await get(host,true);for(const day of [1,2,3]){assert.equal(d.state.days[day].phase,'collecting');assert.deepEqual(d.state.days[day].roster,[]);assert.deepEqual(d.state.days[day].preferences,{});}
+assert(d.people.some(p=>p.id==='track-a'));after=await get('lj_notebook=track-a-session');assert.equal(after.days[1].enrolled,false);
+console.log('PASS: reset authorization, explicit confirmation, stale-version rejection, per-day isolation, retained roster/history, withdrawn participant assignments and all-day clean start without deleting accounts.');
