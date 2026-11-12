@@ -1,0 +1,9 @@
+import {sqliteTable,text,integer} from 'drizzle-orm/sqlite-core';
+export const rooms=sqliteTable('rooms',{code:text('code').primaryKey(),title:text('title').notNull(),size:integer('size').notNull(),stage:text('stage').notNull(),spotlight:integer('spotlight').notNull().default(0),created:integer('created').notNull()});
+export const members=sqliteTable('members',{id:text('id').primaryKey(),token:text('token').notNull(),room:text('room').notNull(),name:text('name').notNull(),country:text('country').notNull(),role:text('role').notNull(),group:integer('group_no').notNull().default(0),perspective:text('perspective').notNull().default(''),experience:text('experience').notNull().default(''),challenge:text('challenge').notNull().default(''),question:text('question').notNull().default(''),published:integer('published').notNull().default(0),updated:integer('updated').notNull()});
+export const notes=sqliteTable('notes',{id:text('id').primaryKey(),owner:text('owner').notNull(),body:text('body').notNull(),updated:integer('updated').notNull()});
+export const sessions=sqliteTable('admin_sessions',{token:text('token').primaryKey(),expires:integer('expires').notNull()});
+export const attempts=sqliteTable('login_attempts',{key:text('key').primaryKey(),count:integer('count').notNull(),expires:integer('expires').notNull()});
+
+export const notebookAccounts=sqliteTable('notebook_accounts',{id:text('id').primaryKey(),username:text('username').notNull().unique(),name:text('name').notNull(),salt:text('salt').notNull(),passwordHash:text('password_hash').notNull(),mustChange:integer('must_change').notNull().default(1),created:integer('created').notNull()});
+export const notebookSessions=sqliteTable('notebook_sessions',{token:text('token').primaryKey(),owner:text('owner').notNull(),expires:integer('expires').notNull()});

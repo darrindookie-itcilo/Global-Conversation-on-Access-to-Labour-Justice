@@ -1,0 +1,32 @@
+import {build} from 'esbuild';import {DatabaseSync} from 'node:sqlite';import assert from 'node:assert/strict';import fs from 'node:fs';
+const sql=new DatabaseSync(':memory:');for(const file of fs.readdirSync('drizzle').filter(x=>x.endsWith('.sql')).sort())sql.exec(fs.readFileSync('drizzle/'+file,'utf8').replaceAll('--> statement-breakpoint',''));
+const DB={prepare(query){let args=[];const stmt=sql.prepare(query);return{bind(...a){args=a;return this},async first(){return stmt.get(...args)||null},async all(){return{results:stmt.all(...args)}},async run(){return stmt.run(...args)}}},async batch(a){return Promise.all(a.map(x=>x.run()))}};
+globalThis.__TEST_ENV={DB,FACILITATOR_EMAIL:'test@example.org',FACILITATOR_PASSWORD:'test-only-password'};
+await build({entryPoints:['app/api/route.ts'],bundle:true,platform:'node',format:'esm',outfile:'.sites-runtime/api-test.mjs',plugins:[{name:'test-env',setup(b){b.onResolve({filter:/^cloudflare:workers$/},()=>({path:'env',namespace:'test'}));b.onLoad({filter:/.*/,namespace:'test'},()=>({contents:'export const env=globalThis.__TEST_ENV;',loader:'js'}));}}]});
+const {GET,POST}=await import('../.sites-runtime/api-test.mjs?'+Date.now());
+let cookie='';async function post(action,body={},headers={},status=200){const r=await POST(new Request('https://test.local/api',{method:'POST',headers:{'Content-Type':'application/json',...headers},body:JSON.stringify({action,...body})}));assert.equal(r.status,status,action+': '+await r.clone().text());return {data:await r.json(),response:r}};async function get(q,headers={},status=200){const r=await GET(new Request('https://test.local/api?'+new URLSearchParams(q),{headers}));assert.equal(r.status,status);return r.json()}
+await post('create',{}, {},401);await get({action:'notes'},{},401);await post('login',{email:'test@example.org',password:'wrong'},{},401);
+const login=await post('login',{email:'test@example.org',password:'test-only-password'});cookie=login.response.headers.get('Set-Cookie').split(';')[0];assert(login.response.headers.get('Set-Cookie').includes('HttpOnly'));const auth={Cookie:cookie};
+const {data:{code}}=await post('create',{size:2},auth);const people=[];for(let i=0;i<15;i++){people.push((await post('join',{code,name:'QA '+i,role:i%2?'Worker':'Employer'})).data)}
+await post('allocate',{code,size:2},auth);let d=await get({action:'room',code});const counts={};d.members.forEach(m=>counts[m.group_no]=(counts[m.group_no]||0)+1);assert.deepEqual(Object.values(counts).sort(),[2,2,2,2,2,2,3]);
+const p=people[0];await post('contribute',{...p,perspective:'PRIVATE',published:false});d=await get({action:'room',code});assert(d.members.every(m=>m.perspective!=='PRIVATE'));d=await get({action:'room',...p});assert.equal(d.me.perspective,'PRIVATE');await post('contribute',{...p,token:'wrong'},{},401);
+await post('contribute',{...p,perspective:'SHARED',published:true});d=await get({action:'room',code});assert(d.members.some(m=>m.perspective==='SHARED'));await post('move',{code,id:p.id,group:2},auth);await post('spotlight',{code,group:2},auth);assert.equal((await get({action:'room',code})).room.spotlight,2);
+await post('stage',{code,stage:'present'},auth);await post('contribute',p,{},400);
+const a={'oai-authenticated-user-id':'test-a'},b={'oai-authenticated-user-id':'test-b'};await post('note',{key:'general',text:'Private A'},a);assert.equal((await get({action:'notes'},a)).notes.length,1);assert.equal((await get({action:'notes'},b)).notes.length,0);
+await get({action:'participants'},{},401);await post('participant-create',{name:'A',username:'alice'}, {},401);
+const account=(await post('participant-create',{name:'Alice',username:'alice'},auth)).data;
+assert.equal(account.temporaryPassword.length,20);
+const listing=await get({action:'participants'},auth);assert(!JSON.stringify(listing).includes(account.temporaryPassword));assert(!JSON.stringify(listing).includes('password_hash'));
+let pl=await post('participant-login',{username:'alice',password:account.temporaryPassword});let pa={Cookie:pl.response.headers.get('Set-Cookie').split(';')[0]};assert(pl.data.mustChange);
+await get({action:'notes'},pa,401);await post('note',{key:'general',text:'no'},pa,401);
+const changed=await post('participant-password',{password:'A-new-private-password'},pa);const previous=pa;pa={Cookie:changed.response.headers.get('Set-Cookie').split(';')[0]};await get({action:'notes'},previous,401);
+await post('note',{key:'general',text:'Workshop private note'},pa);assert.equal((await get({action:'notes'},pa)).notes[0].body,JSON.stringify({key:'general',text:'Workshop private note'}));
+assert.equal((await get({action:'notes'},b)).notes.length,0);await get({action:'notes'},auth,401);
+await post('participant-reset',{id:account.id},{},401);const reset=(await post('participant-reset',{id:account.id},auth)).data;await get({action:'notes'},pa,401);
+await post('participant-login',{username:'alice',password:'A-new-private-password'}, {},401);
+pl=await post('participant-login',{username:'alice',password:reset.temporaryPassword});pa={Cookie:pl.response.headers.get('Set-Cookie').split(';')[0]};assert(pl.data.mustChange);
+const again=await post('participant-password',{password:'Another-private-password'},pa);pa={Cookie:again.response.headers.get('Set-Cookie').split(';')[0]};assert.equal((await get({action:'notes'},pa)).notes.length,1);
+await post('participant-logout',{},pa);await get({action:'notes'},pa,401);
+console.log('PASS: workshop account creation, forced password change, private notebook ownership, reset preserves notes, revoked sessions, old passwords rejected, hashes never exposed, logout.');
+await post('stage',{code,stage:'closed'},auth);await post('join',{code,name:'late'},{},400);await post('create',{}, {Origin:'https://other.local'},403);await post('logout',{},auth);await post('create',{},auth,401);
+console.log('PASS: authentication, cookie security, unauthorized controls, 15-person balanced groups, draft privacy, public contributions, member ownership, moves, spotlight, pause/close, notebook isolation, origin protection and logout.');

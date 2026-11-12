@@ -1,0 +1,194 @@
+[
+  {
+    "id": "d0-r2-Common",
+    "day": 0,
+    "time": "9:00 – 10:30",
+    "track": "Common",
+    "title": "Opening plenary",
+    "detail": ""
+  },
+  {
+    "id": "d1-r2-Common",
+    "day": 1,
+    "time": "9:00 – 10:30",
+    "track": "Common",
+    "title": "Preventing Labour Disputes at the Workplace: Social Dialogue, Early Intervention and Internal Mechanisms",
+    "detail": "Denise Currie, Queens University, Belfast"
+  },
+  {
+    "id": "d2-r2-Common",
+    "day": 2,
+    "time": "9:00 – 10:30",
+    "track": "Common",
+    "title": "Labour Courts, Tribunals and Dispute Resolution Bodies: Institutional Models and Coordination",
+    "detail": "Sylda Langford, WRC, Ireland/ Matthias Jacxsens ,MOL, Belgium / Lelio Bentes, Tribunal Superior do Trabalho, Brazil · Facilitation: Darrin Dookie and V. Van Goethem"
+  },
+  {
+    "id": "d3-r2-Common",
+    "day": 3,
+    "time": "9:00 – 10:30",
+    "track": "Common",
+    "title": "Rethinking Labour Justice for the Future of Work: Addressing Exclusion, AI, New Forms of Work, and Emerging Types of Disputes",
+    "detail": "Lelio Bentes/Matthias Jacxsens/ Stewart Gee (ACAS) · Facilitation: Irene Deorsola/ Valérie Van Goethem"
+  },
+  {
+    "id": "d4-r2-Common",
+    "day": 4,
+    "time": "9:00 – 10:30",
+    "track": "Common",
+    "title": "Professional Competencies for Effective Conflict Resolution in a Changing World of Work",
+    "detail": ""
+  },
+  {
+    "id": "d0-r4-Common",
+    "day": 0,
+    "time": "11:00 – 12:30",
+    "track": "Common",
+    "title": "Understanding Labour Disputes: Types, Causes and Escalation",
+    "detail": "(S. Baffi/ V. Van Goethem)"
+  },
+  {
+    "id": "d1-r4-A",
+    "day": 1,
+    "time": "11:00 – 12:30",
+    "track": "A",
+    "title": "Conciliation/mediation of labour disputes",
+    "detail": "Irene Deorsola, ITCILO/Sylda Langford, Workplace Relations Commission, Ireland"
+  },
+  {
+    "id": "d1-r4-B",
+    "day": 1,
+    "time": "11:00 – 12:30",
+    "track": "B",
+    "title": "Workplace Grievance Handling: Links with Collective Bargaining and External Remedies",
+    "detail": "Denise Currie, Queens University, Belfast"
+  },
+  {
+    "id": "d2-r4-A",
+    "day": 2,
+    "time": "11:00 – 12:30",
+    "track": "A",
+    "title": "Evaluating Effectiveness of Labour Dispute Resolution Institutions",
+    "detail": "Accessibility, independence, timeliness, fairness, enforcement and users’ experience · Valérie Van Goethem, ILO"
+  },
+  {
+    "id": "d2-r4-B",
+    "day": 2,
+    "time": "11:00 – 12:30",
+    "track": "B",
+    "title": "Digitalising Labour Dispute Institutions: Case Management and Service Delivery",
+    "detail": "Nersan Govender"
+  },
+  {
+    "id": "d3-r4-A",
+    "day": 3,
+    "time": "11:00 – 12:30",
+    "track": "A",
+    "title": "Protecting Workers in the Platform Economy: New Challenges for Labour Justice",
+    "detail": "Darrin Dookie, ITCILO"
+  },
+  {
+    "id": "d3-r4-B",
+    "day": 3,
+    "time": "11:00 – 12:30",
+    "track": "B",
+    "title": "Violence and Harassment at Work (C190): Ensuring Access to Effective Prevention and Remedies",
+    "detail": "Valentina Beghini, ILO Valérie Van Goethem"
+  },
+  {
+    "id": "d4-r4-Common",
+    "day": 4,
+    "time": "11:00 – 12:30",
+    "track": "Common",
+    "title": "Professional Competencies for Effective Conflict Resolution in a Changing World of Work",
+    "detail": ""
+  },
+  {
+    "id": "d0-r6-Common",
+    "day": 0,
+    "time": "14:00 – 15:15",
+    "track": "Common",
+    "title": "The Psychology of Labour Disputes: Understanding Perceptions, Emotions and Behaviour",
+    "detail": "Stéphanie Demoulin, Catholic University of Louvain"
+  },
+  {
+    "id": "d1-r6-A",
+    "day": 1,
+    "time": "14:00 – 15:15",
+    "track": "A",
+    "title": "Conciliation/mediation of labour disputes",
+    "detail": "Irene Deorsola, ITCILO/Sylda Langford, Workplace Relations Commission, Ireland"
+  },
+  {
+    "id": "d1-r6-B",
+    "day": 1,
+    "time": "14:00 – 15:15",
+    "track": "B",
+    "title": "Workplace Grievance Handling: Links with Collective Bargaining and External Remedies",
+    "detail": "Denise Currie, Queens University, Belfast"
+  },
+  {
+    "id": "d2-r6-A",
+    "day": 2,
+    "time": "14:00 – 15:15",
+    "track": "A",
+    "title": "Evaluating  Effectiveness of Labour Dispute Resolution Institutions",
+    "detail": "Accessibility, independence, timeliness, fairness, enforcement and users’ experience · Valérie Van Goethem, ILO"
+  },
+  {
+    "id": "d2-r6-B",
+    "day": 2,
+    "time": "14:00 – 15:15",
+    "track": "B",
+    "title": "Digitalising Labour Dispute Institutions: Case Management and Service Delivery",
+    "detail": "Nersan Govender"
+  },
+  {
+    "id": "d3-r6-A",
+    "day": 3,
+    "time": "14:00 – 15:15",
+    "track": "A",
+    "title": "Protecting Workers in the Platform Economy: New Challenges for Labour Justice",
+    "detail": "Darrin Dookie, ITCILO"
+  },
+  {
+    "id": "d3-r6-B",
+    "day": 3,
+    "time": "14:00 – 15:15",
+    "track": "B",
+    "title": "Violence and Harassment at Work (C190): Ensuring Access to Effective Prevention and Remedies",
+    "detail": "Valentina Beghini, ILO Valérie Van Goethem"
+  },
+  {
+    "id": "d0-r8-Common",
+    "day": 0,
+    "time": "15:45 – 17:00",
+    "track": "Common",
+    "title": "The Psychology of Labour Disputes: Understanding Perceptions, Emotions and Behaviour",
+    "detail": "Stéphanie Demoulin, Catholic University of Louvain"
+  },
+  {
+    "id": "d1-r8-Common",
+    "day": 1,
+    "time": "15:45 – 17:00",
+    "track": "Common",
+    "title": "Social Dialogue as Foundations for Effective Dispute Prevention and Resolution",
+    "detail": "Matthias Jacxsens, MOL Belgium"
+  },
+  {
+    "id": "d2-r8-Common",
+    "day": 2,
+    "time": "15:45 – 17:00",
+    "track": "Common",
+    "title": "Comparative practice Forum",
+    "detail": ""
+  },
+  {
+    "id": "d3-r8-Common",
+    "day": 3,
+    "time": "15:45 – 17:00",
+    "track": "Common",
+    "title": "Peer Exchange: AI, Technology and Inclusive Access to Labour Justice",
+    "detail": "Nersan Govender / Stewart Gee, ACAS, UK"
+  }
+]
