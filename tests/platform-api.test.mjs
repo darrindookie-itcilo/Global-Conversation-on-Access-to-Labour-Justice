@@ -11,3 +11,22 @@ let result=await GET(new Request('https://test.local/api/platform?code='+code));
 await call({op:'reveal',code},false,401);await call({op:'reveal',code},true);result=await GET(new Request('https://test.local/api/platform?code='+code));d=await result.json();assert(Object.values(d.state.teams).every(t=>t.rounds[0]>=10));
 await call({op:'answer',code,id:joined[0].id,token:'bad',choice:'A',reason:'Forgery'},false,401);
 console.log('PASS: endpoint authorization, three simultaneous joins/submissions, optimistic concurrency, server scoring, token redaction and forged identity rejection.');
+// A facilitator cookie must not turn an authenticated team action into a host control.
+const mixed=await call({op:'create'},true);const mt=await call({op:'join',code:mixed.code,name:'Mixed-session team'});
+await call({op:'open',code:mixed.code},true);
+await call({op:'answer',code:mixed.code,id:mt.id,token:'forged',choice:'A',reason:'Forged'},true,401);
+await call({op:'answer',code:mixed.code,id:mt.id,token:mt.token,choice:'A',reason:'Supported response'},true);
+await call({op:'close',code:mixed.code},true);
+let mixedState=await (await GET(new Request('https://test.local/api/platform?code='+mixed.code))).json();assert(mixedState.state.closedAt>=mixedState.state.openedAt);
+const second=await call({op:'create',game:2},true);const st=await call({op:'join',code:second.code,name:'Mixed-session sprint'});
+await call({op:'round',code:second.code,round:'r1'},true);await call({op:'open',code:second.code},true);
+await call({op:'buzz',code:second.code,id:st.id,token:st.token,choice:'Art. 13'},true);
+await call({op:'round',code:second.code,round:'r3'},true);
+const row={op:'row',code:second.code,id:st.id,token:st.token,gap:'Missing procedure',article:'Art. 13',action:'Introduce a review procedure',colour:'GREEN',rowId:'repeat-proof'};
+await Promise.all([call(row,true),call(row,true),call({...row,rowId:'different-id'},true)]);
+let rs=await (await GET(new Request('https://test.local/api/platform?code='+second.code))).json();assert.equal(Object.keys(rs.state.rows).length,1);assert.equal(rs.state.teams[st.id].rounds[3],12);assert.equal(rs.state.teams[st.id].rounds[1],10);
+await call({op:'row',...row,token:'forged'},true,401);
+await call({op:'open',code:second.code},false,401);
+console.log('PASS: mixed facilitator/team session answer, buzz and row; forged team tokens rejected even for hosts; concurrent duplicate rows score once; closed timestamp; host control protection retained.');
+
+await call({op:'join',code:mixed.code,game:2,name:'Wrong game'},false,400);

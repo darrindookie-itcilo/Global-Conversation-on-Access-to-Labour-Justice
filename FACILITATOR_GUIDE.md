@@ -80,3 +80,13 @@ Icebreaker participants can choose Exit session & return home, or Restart my ice
 
 ### Reset daily allocations
 Under Keep both tracks balanced, expand Reset allocation / start again. Reset the selected day or all three days. By default, confirmed participant lists are kept; untick the checkbox to clear attendance too. Reset clears preferences, proposals and published assignments, reopens preference collection, and retains a reset entry in allocation history. Accounts, passwords, notebooks, icebreaker rooms and games are unaffected. Export each day before resetting if you need a copy. Reopen preferences is the lighter option: it preserves saved preferences and attendance but withdraws assignments so you can make another proposal.
+
+
+## Platform game reliability update
+Team submissions now use the team identity even if the device is also signed in as facilitator. Host controls still require facilitator sign-in. Remembered rooms are separate for each game. When a host carries scores into RATIFY!, connected Session 1 screens move to the matching Session 2 screen with the same team identity. A Session 1 room cannot be joined from the RATIFY! join form.
+
+Polling runs every 2.5 seconds while visible, pauses after three consecutive failures and stops for a deleted or expired room. Reconnect retries explicitly; returning to the tab or regaining connectivity also resumes. Change room returns to the join form without deleting the previous team identity. Gap rows have server-side duplicate protection. Gate reasons remain required, as in the existing activity; the content and scoring values are unchanged.
+
+Manual fallback uses an inline team-name form and a persistent local-only banner. Return to online room restores the live connection without sending manual scores. Manual scoreboards are saved separately for the two games. Project the current screen in manual mode; separate devices do not synchronize. Closed gate counters stop at the closing timestamp. Projector typography is enlarged and answer buttons include their A–D letters.
+
+My action plan is now a dedicated five-field commitment card: breakpoint, concrete change, agreement, deadline and evidence of progress. It uses the same private workshop account, autosaves and exports to Word or print/PDF. Earlier action-plan notes remain available and are included in the export.
