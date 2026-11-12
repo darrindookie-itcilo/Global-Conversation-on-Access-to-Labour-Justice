@@ -53,3 +53,14 @@ Keep the morning room. After ending Game 1, press Carry scores into RATIFY! once
 Live games use the dashboard’s existing shared service, as selected by the course owner, rather than Firebase. Facilitator controls require server-validated authentication; participants use room codes only. All submitted text is displayed as text, and exports neutralize spreadsheet formulas.
 
 If the connection fails, keep the current page open. Manual fallback creates a clearly labelled local scoreboard and does not overwrite live results. Run discussion aloud and adjust scores manually. To return to live play, reopen the original room code. Do not expect offline edits to synchronize.
+
+## Balance the daily tracks
+1. In Facilitator studio, create one workshop account per participant, or reuse their existing notebook account. Do not create a second account for a different device.
+2. Under Daily allocation, choose Tuesday and confirm the people attending. Confirm all workshop accounts only after checking for test or duplicate accounts. For Wednesday and Thursday you can use Tuesday’s participant list, then adjust attendance.
+3. Ask participants to open My programme, sign in and choose A, B or Either for each day. Each preference covers morning and afternoon together. The same account works on another device.
+4. Review the live totals and ask for volunteers if one track is oversubscribed. Volunteers change their preference to Either while collection is open. Confirm that everyone has had that opportunity. Missing preferences must be collected before the draw.
+5. Click Create balanced proposal. It closes preferences and uses a recorded random order to resolve oversubscribed choices. Review names and both totals. Manually move people if necessary, recording a reason.
+6. Confirm and publish allocations. A split differing by more than one requires your explicit exception reason. Participants see their confirmed daily track in My programme, and can filter to their confirmed sessions.
+7. Export the daily list as CSV. To change a published allocation, reopen that day with a reason. This withdraws its published assignments; participants see preferences open again until you confirm a replacement. Other days and icebreaker groups are unaffected.
+
+Only confirmed attendance counts toward the target. A preference is not a booking. Participants cannot see other people’s names, choices or draft allocations. The recorded draw and history are available in the facilitator panel.
