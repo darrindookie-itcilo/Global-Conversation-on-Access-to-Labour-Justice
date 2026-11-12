@@ -64,3 +64,15 @@ If the connection fails, keep the current page open. Manual fallback creates a c
 7. Export the daily list as CSV. To change a published allocation, reopen that day with a reason. This withdraws its published assignments; participants see preferences open again until you confirm a replacement. Other days and icebreaker groups are unaffected.
 
 Only confirmed attendance counts toward the target. A preference is not a booking. Participants cannot see other people’s names, choices or draft allocations. The recorded draw and history are available in the facilitator panel.
+
+
+## Live games control centre
+Open Facilitator studio and sign in. Live games is the first section. All seven workshop games have a Create room button; existing rooms show their teams, progress and scores. Select Manage room to use controls, export results, open the projector or delete the room. Platform rooms keep their existing scoring and controls, embedded here, and still expire for play after 24 hours. Retained expired results can be exported or deleted.
+
+For JusticeWorks, The Missing Voice, Digital Justice and Case Challenge Library, teams open Join live room (or your room link), enter the code and a unique team name, and use one device per team. Activity selections/reveals report progress; teams explicitly submit their written response. Award 0–10 points with a short explanation. Revised submissions clear the previous award. Pause/finish blocks submissions on the server; reveal controls whether other teams/projector can see responses. Practice activities remain available without a live room.
+
+Routes to Labour Justice uses the shared board inside Manage room. Set up 2–8 named teams on the facilitator device. Board names, positions, points and prompts synchronize to the room projector; phones are optional. Board controls remain facilitator-only. The board roster is the set of names entered during board setup, rather than the optional phone sign-in roster.
+
+Delete room permanently removes its submissions and scores; export first. Confirmation is required. Icebreaker room deletion is next to the Existing room selector. It deletes all participants and cards for that room only.
+
+Icebreaker participants can choose Exit session & return home, or Restart my icebreaker. Both remove their current member record, shared/private card and local identity; restart opens a fresh join form for the same room. Other participants and notebook accounts are unaffected. No action is taken on real rooms during deployment.
