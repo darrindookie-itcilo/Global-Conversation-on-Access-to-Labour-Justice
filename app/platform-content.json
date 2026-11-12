@@ -1,0 +1,304 @@
+{
+  "gates": [
+    {
+      "name": "JURISDICTION",
+      "question": "The worker has only a screenshot. Before anything else, what must you establish about the respondent?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The legal identity of the entity that actually took the decision, and whether it is amenable to your jurisdiction",
+          "points": 10,
+          "reveal": "The respondent problem comes before everything else. The operating entity is often foreign; the local entity may have no power over the decision."
+        },
+        {
+          "id": "B",
+          "text": "Whether the worker is an employee",
+          "points": 5,
+          "reveal": "It matters, but not first. A respondent has to exist before status can be argued about."
+        },
+        {
+          "id": "C",
+          "text": "Which local company paid him",
+          "points": 4,
+          "reveal": "A useful evidential thread — and often your enforcement lever later — but the payer may not be the decision-maker."
+        },
+        {
+          "id": "D",
+          "text": "Whether the complaining customer can be identified",
+          "points": 0,
+          "reveal": "The customer is not the respondent. The decision under challenge was taken by the platform."
+        }
+      ]
+    },
+    {
+      "name": "ADMISSIBILITY",
+      "question": "There is no written decision, only an in-app message he cannot export. What is the live risk to admissibility?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Time limits run from a decision he cannot evidence, so the clock may expire before he can prove it started",
+          "points": 10,
+          "reveal": "This is the evidence problem expressed as a limitation problem, and it is how most of these cases are actually lost."
+        },
+        {
+          "id": "B",
+          "text": "The claim is inadmissible because the contract says the decision is final",
+          "points": 0,
+          "reveal": "A contractual finality clause does not oust a statutory jurisdiction."
+        },
+        {
+          "id": "C",
+          "text": "He must exhaust the platform's internal mechanism first",
+          "points": 4,
+          "reveal": "Exhaustion may apply in some systems — but it is never automatic, and the internal mechanism here has no independent reviewer."
+        },
+        {
+          "id": "D",
+          "text": "He has no standing because he is called a partner",
+          "points": 3,
+          "reveal": "The label does not decide it. Convention No. 193, Article 9: classification is guided mainly by the facts."
+        }
+      ]
+    },
+    {
+      "name": "EVIDENCE",
+      "question": "Almost all the evidence sits on the other side's servers. What is the most useful early order?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Production of the decision, the underlying report, the rating history and the trip record, with a deadline",
+          "points": 10,
+          "reveal": "Production with a deadline is what converts an undocumented grievance into a case."
+        },
+        {
+          "id": "B",
+          "text": "That the worker produce his dashcam footage",
+          "points": 0,
+          "reveal": "He already has it. This moves the burden in the wrong direction."
+        },
+        {
+          "id": "C",
+          "text": "Preservation of the records pending determination",
+          "points": 9,
+          "reveal": "Often the right first move, and almost as valuable — but preservation alone does not put the file in front of you."
+        },
+        {
+          "id": "D",
+          "text": "Adjourn until the platform responds voluntarily",
+          "points": 0,
+          "reveal": "Nothing in this file suggests a voluntary response is coming."
+        }
+      ]
+    },
+    {
+      "name": "REMEDY",
+      "question": "He wants his account back, his money, and someone to look at the footage. Which remedy is most likely to fall outside your institution's ordinary powers?",
+      "options": [
+        {
+          "id": "A",
+          "text": "Ordering restoration of access to a privately operated application",
+          "points": 10,
+          "reveal": "This is the remedy that matches the harm, and the one most systems have no settled power to grant. Compare Australia, where the Fair Work Commission can order reactivation."
+        },
+        {
+          "id": "B",
+          "text": "Ordering payment of the outstanding sum",
+          "points": 3,
+          "reveal": "Usually squarely within ordinary powers."
+        },
+        {
+          "id": "C",
+          "text": "Ordering the platform to give reasons",
+          "points": 5,
+          "reveal": "Often available, rarely used — and Article 15 of Convention No. 193 is now a reference point for it."
+        },
+        {
+          "id": "D",
+          "text": "Awarding compensation",
+          "points": 2,
+          "reveal": "Generally available, but money does not restore the livelihood."
+        }
+      ]
+    },
+    {
+      "name": "ENFORCEMENT",
+      "question": "You make an order. The operating entity has no assets in your jurisdiction. What is your most realistic lever?",
+      "options": [
+        {
+          "id": "A",
+          "text": "The locally registered entity that pays the workers, plus any licensing or registration condition the platform depends on",
+          "points": 10,
+          "reveal": "Enforcement usually runs through the local footprint: the payment entity, the transport licence, the registration."
+        },
+        {
+          "id": "B",
+          "text": "Recognition and enforcement of your order abroad",
+          "points": 6,
+          "reveal": "Available in principle; slow and expensive in practice, and rarely proportionate to the sum in dispute."
+        },
+        {
+          "id": "C",
+          "text": "Contempt proceedings against the foreign parent",
+          "points": 3,
+          "reveal": "Satisfying, and usually unenforceable."
+        },
+        {
+          "id": "D",
+          "text": "Nothing can be done",
+          "points": 0,
+          "reveal": "Article 22 of Convention No. 193 treats compliance and enforcement as a distinct obligation precisely because this answer is unacceptable."
+        }
+      ]
+    },
+    {
+      "name": "FORUM",
+      "question": "What is the strongest argument that clause 24.3 should not stop this claim?",
+      "options": [
+        {
+          "id": "A",
+          "text": "That a filing fee approaching the claimant's annual income makes the clause an effective denial of access",
+          "points": 10,
+          "reveal": "This is the reasoning in Heller v. Uber Technologies, where the Supreme Court of Canada held such a clause unconscionable — a case cited in the summary record of the ILO Tripartite Technical Meeting on Access to Labour Justice, Geneva, February 2025."
+        },
+        {
+          "id": "B",
+          "text": "That the clause is void because the worker is an employee",
+          "points": 4,
+          "reveal": "Possible, but it makes everything depend on a classification question that is not settled."
+        },
+        {
+          "id": "C",
+          "text": "That arbitration clauses are always unenforceable in labour matters",
+          "points": 0,
+          "reveal": "Too broad, and untrue in most systems."
+        },
+        {
+          "id": "D",
+          "text": "That your court should simply disregard foreign clauses",
+          "points": 0,
+          "reveal": "Not an argument. Article 19 of Convention No. 193 — preference for the law of the place where the work is performed — is the principled route."
+        }
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "question": "The worker is never told that an algorithm scores his punctuality.",
+      "correct": "Art. 13",
+      "reveal": "Members must require platforms to inform workers, and their representatives, about automated systems used to monitor, evaluate or decide on work, and how they affect working conditions and access to work.",
+      "alsoAccept": null
+    },
+    {
+      "question": "He asks why he was deactivated and gets no answer.",
+      "correct": "Art. 15",
+      "reveal": "On request and without unreasonable delay, a written explanation of significant decisions that adversely affect working arrangements and access to work.",
+      "alsoAccept": null
+    },
+    {
+      "question": "He cannot obtain his own trip records or rating history.",
+      "correct": "Art. 16",
+      "reveal": "Safeguards for personal data, and rights of access, rectification and erasure. In our language: the evidence.",
+      "alsoAccept": null
+    },
+    {
+      "question": "The contract names a foreign law and a foreign seat of arbitration.",
+      "correct": "Art. 19",
+      "reveal": "Preference for the law of the place where the work is performed.",
+      "alsoAccept": null
+    },
+    {
+      "question": "He is called a partner, and the registry turns him away.",
+      "correct": "Art. 9",
+      "reveal": "Correct classification, guided mainly by the facts relating to the performance of the work and the remuneration — the Convention does not prescribe who is an employee.",
+      "alsoAccept": null
+    },
+    {
+      "question": "His account is closed shortly after he joins a drivers' association.",
+      "correct": "Art. 17",
+      "reveal": "Suspension, deactivation or termination on discriminatory or otherwise unlawful grounds must be prohibited. Accept Art. 3 as a second correct answer for half points: freedom of association is a fundamental principle under Article 3.",
+      "alsoAccept": "Art. 3"
+    },
+    {
+      "question": "There is no public body he can take the dispute to at all.",
+      "correct": "Art. 21",
+      "reveal": "Easy access to safe, fair and effective dispute resolution mechanisms and to appropriate and effective remedies.",
+      "alsoAccept": null
+    },
+    {
+      "question": "The tribunal orders payment and nothing happens.",
+      "correct": "Art. 22",
+      "reveal": "Mechanisms for ensuring compliance with and enforcement of national laws, regulations and collective agreements — treated separately from access.",
+      "alsoAccept": null
+    },
+    {
+      "question": "A migrant rider is charged a fee to be onboarded.",
+      "correct": "Art. 20",
+      "reveal": "Protection of migrant and refugee platform workers in recruitment and in work.",
+      "alsoAccept": null
+    },
+    {
+      "question": "The review of his deactivation is carried out by the same automated system that made it.",
+      "correct": "Art. 15",
+      "reveal": "Article 15(2): appropriate human involvement. A review that is not human is not a review.",
+      "alsoAccept": null
+    }
+  ],
+  "models": [
+    {
+      "name": "EU",
+      "title": "EU — CONTESTABILITY.",
+      "description": "Directive 2024/2831 requires human oversight of automated systems and human review of significant decisions, by people with the competence and authority to override them. Transposition due 2 December 2026."
+    },
+    {
+      "name": "AUSTRALIA",
+      "title": "AUSTRALIA — AN ACTUAL FORUM.",
+      "description": "The Fair Work Commission hears unfair deactivation claims from eligible employee-like workers and may order reactivation and lost earnings."
+    },
+    {
+      "name": "SINGAPORE",
+      "title": "SINGAPORE — REPRESENTATION.",
+      "description": "Platform work associations may bargain; disputes go to conciliation at the Ministry of Manpower and on to the Industrial Arbitration Court."
+    },
+    {
+      "name": "KARNATAKA",
+      "title": "KARNATAKA — TWO DOORS.",
+      "description": "Act No. 72 of 2025: a platform-level dispute committee for platform conduct, and a separate welfare board route for entitlements, with an appeal."
+    }
+  ],
+  "problems": [
+    {
+      "question": "A rider is deactivated by an algorithm and nobody at the company has the authority to reverse it.",
+      "correct": "EU",
+      "reveal": "The gap is authority to override, which is what human oversight and review are for."
+    },
+    {
+      "question": "A courier wants a public body to order his account restored.",
+      "correct": "AUSTRALIA",
+      "reveal": "The gap is a forum with the remedial power to reactivate."
+    },
+    {
+      "question": "Twenty riders have an identical pay complaint and no way to raise it as one issue.",
+      "correct": "SINGAPORE",
+      "reveal": "The gap is collective representation connected to public dispute settlement."
+    },
+    {
+      "question": "A worker cannot tell whether his complaint is against the platform or about his welfare entitlement.",
+      "correct": "KARNATAKA",
+      "reveal": "The gap is jurisdictional clarity between two separate routes."
+    }
+  ],
+  "case": "A worker has driven for a ride-hailing and delivery application for two years and four months. The terms call him an independent service partner. On 3 November a customer reported unsafe driving. At 21:40 the same day his account was deactivated. The in-app message read, in full: \"Your account has been deactivated following a report of unsafe conduct. This decision is final.\" No reference number, no named decision-maker, no copy of the report, no reasons, no appeal address. The chatbot replied \"Your issue has been noted.\" A helpline agent said she could not see the reason and that it had been escalated. Eleven days of earnings are unpaid. He has a dashcam recording. He has no copy of the complaint, his rating history, the trip record or the terms as they stood that day.\n\nYou are not advising a platform. You are sitting in your own institution, and this file has just landed on your desk.",
+  "twist": "STOP. NEW FACTS.\nThe worker performs the work in your country.\nThe operating entity named in the terms is incorporated in another country.\nClause 24.3: any dispute shall be finally resolved by arbitration seated in a third country, under international chamber of commerce rules, in English. Filing fees payable in advance by the claimant: USD 14,500.\nClause 24.4: the terms are governed by the law of the country of incorporation.\nA sixth gate has opened: FORUM.",
+  "articles": [
+    "Art. 3",
+    "Art. 9",
+    "Art. 13",
+    "Art. 15",
+    "Art. 16",
+    "Art. 17",
+    "Art. 19",
+    "Art. 20",
+    "Art. 21",
+    "Art. 22"
+  ]
+}

@@ -36,3 +36,20 @@ Open Facilitator studio → Participant notebook accounts. Enter a name and uniq
 
 ## Sharing and mobile
 Share the live dashboard URL. Its page includes a title, description and the supplied course social card for Teams and WhatsApp previews. Those apps can cache old previews and may suppress previews under their own settings. Mobile navigation uses the menu button; tap outside it to close.
+
+## Platform economy — Session 1: DOES IT SURVIVE?
+Open Workshop games → DOES IT SURVIVE? → Facilitator. Sign in with the existing facilitator credentials, create a room and open the projector in a separate window. Teams enter the four-character room code and a team name, using one device per table. They retain their identity on that browser.
+
+For every gate: Open gate → teams choose an option and type one reason → Close gate → Reveal → optionally award 0–5 judge points for each reason → Next gate. The 90-second clock is soft: answers stay open until you close them. After revealing gate 3 (or later), use DROP THE TWIST, discuss the new facts, then Continue after twist. Gate 6 is added exactly once. Zero-point answers stop the case marker, but the team continues playing. At the end, collect the one-sentence reflections and discuss the gate chart and the four grouped breakpoints (Access/forum, Procedure/evidence, Remedy, Enforcement). These four groupings are facilitation categories, not legal classifications.
+
+## Platform economy — Session 2: RATIFY!
+Keep the morning room. After ending Game 1, press Carry scores into RATIFY! once. Teams on the same browser automatically retain their names and balances; a new room starts without carried scores.
+
+1. Start Article Sprint. Open each gap, allow article claims, then Close gap → Reveal → Next gap. A wrong claim costs 2 points and locks that team out for 5 seconds. At gap 10, use Start Model Market.
+2. Teams receive one problem card and lock a model choice. Set a speaking team to start its 90-second timer. Open voting; other teams vote yes/not yet. Close voting to reveal the anonymous total and award model-match and vote points. Repeat for each team, then Start Green Challenge.
+3. Teams submit gap rows. A GREEN row earns 12 points. Another team can challenge it once; each team has at most two challenges. Allow 60 seconds for the response, then choose UPHELD or OVERTURNED. Resolve all pending challenges before End game.
+4. Export gap rows CSV before leaving. The UTF-8 CSV opens in Excel and supplies the rows for 30 November–4 December. Rooms are available for 24 hours.
+
+Live games use the dashboard’s existing shared service, as selected by the course owner, rather than Firebase. Facilitator controls require server-validated authentication; participants use room codes only. All submitted text is displayed as text, and exports neutralize spreadsheet formulas.
+
+If the connection fails, keep the current page open. Manual fallback creates a clearly labelled local scoreboard and does not overwrite live results. Run discussion aloud and adjust scores manually. To return to live play, reopen the original room code. Do not expect offline edits to synchronize.

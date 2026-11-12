@@ -13,7 +13,7 @@ ITCILO / ILO — Diverse practices, shared goals. Residential phase: 23–27 Nov
 - Original course visual identity, nine downloadable resources and dashboard help.
 
 ## Hosting and access
-This repository contains the full source and course assets. The live application uses a Cloudflare Worker and D1 database through Sites. GitHub Pages alone cannot run the authenticated notebooks and shared live rooms. GitHub Pages publishes the `docs` folder as a doorway to the live application, preserving notebook sign-in and live-room functionality.
+This repository contains the full source and course assets. The live application uses a Cloudflare Worker and D1 database through Sites. GitHub Pages alone cannot run the authenticated notebooks and shared live rooms. GitHub Pages publishes a complete static welcome page from `docs`, with no redirect or intermediate opening message. Its navigation opens the hosted dashboard views for authenticated notebooks and shared live activities. The supplied QR code is visible on both home pages.
 
 [GitHub Pages dashboard link](https://darrindookie-itcilo.github.io/Global-Conversation-on-Access-to-Labour-Justice/)
 
@@ -31,3 +31,8 @@ See [Facilitator guide](FACILITATOR_GUIDE.md). Game situations are fictional lea
 
 ## Source notes
 The programme remains a draft. Friday afternoon is unspecified in the supplied agenda. The 2025 expert meeting resources provide substantive learning material, not 2026 course logistics. Original publication and institutional branding rights remain with their respective owners.
+
+## Platform economy games
+`/game1/`, `/game1/host`, `/game1/board` and corresponding `/game2/` routes provide live teams, host controls and projector views. Shared state uses the existing D1 service with optimistic version checks; the endpoint creates its namespaced table if absent. Questions, scores and explanations are preserved from the supplied briefs in `app/platform-content.json` and `public/platform/content.json`. No Firebase account is required.
+
+Checks: `node tests/platform.test.mjs` and `node tests/platform-api.test.mjs` cover scoring and concurrent requests in addition to the original tests.
